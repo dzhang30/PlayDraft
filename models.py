@@ -1,5 +1,6 @@
 from app import db
 
+
 class Player(db.Model):
     __tablename__ = 'players'
     id = db.Column(db.Integer, primary_key=True)
@@ -55,6 +56,6 @@ class FootBallPlayer(Player):
         'polymorphic_identity': 'football player'
     }
 
-if __name__ == '__main__':
-    db.create_all()
+# if __name__ == '__main__':
+#     db.create_all()
 

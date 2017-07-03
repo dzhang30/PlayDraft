@@ -1,12 +1,8 @@
 import requests
-from pprint import pprint
-from main import db
-from main import BasketBallPlayer, BaseBallPlayer, FootBallPlayer
-
+from app import db
+from models import BaseBallPlayer, BasketBallPlayer, FootBallPlayer
 
 URL = 'http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT={}&response_format=JSON'
-NFL_URL = 'http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=football&response_format=JSON'
-MLB_URL = 'http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=baseball&response_format=JSON'
 
 
 class CBS:
@@ -20,7 +16,7 @@ class CBS:
         :return: list of players by sport in the required format
         """
         sport_type = sport.lower()
-        r = requests.get(url=URL.format(sport.lower()))
+        r = requests.get(url=URL.format(sport_type))
         response_json = r.json()
         players = response_json['body']['players']
 
@@ -62,9 +58,9 @@ class CBS:
         if sport_type == 'basketball':
             player['name_brief'] = '{0} {1}.'.format(player['firstname'], player['lastname'][0])
         if sport_type == 'baseball':
-            player['name_brief'] = '{0} {1}.'.format(player['firstname'][0], player['lastname'][0])
+            player['name_brief'] = '{0}. {1}.'.format(player['firstname'][0], player['lastname'][0])
         if sport_type == 'football':
-            player['name_brief'] = '{0} {1}.'.format(player['firstname'][0], player['lastname'])
+            player['name_brief'] = '{0}. {1}'.format(player['firstname'][0], player['lastname'])
 
         attributes = {
             'name_brief': player['name_brief'],
