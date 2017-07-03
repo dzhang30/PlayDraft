@@ -12,5 +12,7 @@ Code challenge for PlayDraft. Display basketball/baseball/football player info i
 7. Follow API Endpoint to desired resource. See below
 
 API Endpoints to follow:
+
 To get all players by type of sport: /api/players/all/[SPORT_TYPE]
+
 To get specific player info by player name brief: /api/players/[NAME_BRIEF]
