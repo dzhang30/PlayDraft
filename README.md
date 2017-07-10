@@ -1,6 +1,6 @@
 # PlayDraft
 
-Display basketball/baseball/football player info from CBS api in JSON format.
+Display basketball/baseball/football player info from CBS api in JSON format. <br/>
 API url: http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=baseball&response_format=JSON
 
 ## How to Use
