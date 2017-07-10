@@ -1,6 +1,7 @@
 # PlayDraft
 
-Display basketball/baseball/football player info from CBS in JSON format
+Display basketball/baseball/football player info from CBS api in JSON format.
+API url: http://api.cbssports.com/fantasy/players/list?version=3.0&SPORT=baseball&response_format=JSON
 
 ## How to Use
 1. Install Python 3.6
