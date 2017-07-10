@@ -1,6 +1,6 @@
 # PlayDraft
 
-Code challenge for PlayDraft. Display basketball/baseball/football player info in JSON format
+Display basketball/baseball/football player info from CBS in JSON format
 
 ## How to Use
 1. Install Python 3.6
